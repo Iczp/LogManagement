@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "IczpNet.LogManagement.Domain.Shared": {
+      "path": "src/IczpNet.LogManagement.Domain.Shared/IczpNet.LogManagement.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.Domain": {
+      "path": "src/IczpNet.LogManagement.Domain/IczpNet.LogManagement.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.Application.Contracts": {
+      "path": "src/IczpNet.LogManagement.Application.Contracts/IczpNet.LogManagement.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.Application": {
+      "path": "src/IczpNet.LogManagement.Application/IczpNet.LogManagement.Application.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.EntityFrameworkCore": {
+      "path": "src/IczpNet.LogManagement.EntityFrameworkCore/IczpNet.LogManagement.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.MongoDB": {
+      "path": "src/IczpNet.LogManagement.MongoDB/IczpNet.LogManagement.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.HttpApi": {
+      "path": "src/IczpNet.LogManagement.HttpApi/IczpNet.LogManagement.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.HttpApi.Client": {
+      "path": "src/IczpNet.LogManagement.HttpApi.Client/IczpNet.LogManagement.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.TestBase": {
+      "path": "test/IczpNet.LogManagement.TestBase/IczpNet.LogManagement.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.LogManagement.EntityFrameworkCore.Tests": {
+      "path": "test/IczpNet.LogManagement.EntityFrameworkCore.Tests/IczpNet.LogManagement.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.LogManagement.MongoDB.Tests": {
+      "path": "test/IczpNet.LogManagement.MongoDB.Tests/IczpNet.LogManagement.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.LogManagement.Domain.Tests": {
+      "path": "test/IczpNet.LogManagement.Domain.Tests/IczpNet.LogManagement.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.LogManagement.Application.Tests": {
+      "path": "test/IczpNet.LogManagement.Application.Tests/IczpNet.LogManagement.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.LogManagement.HttpApi.Host": {
+      "path": "host/IczpNet.LogManagement.HttpApi.Host/IczpNet.LogManagement.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.LogManagement.Web": {
+      "path": "src/IczpNet.LogManagement.Web/IczpNet.LogManagement.Web.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/IczpNet.LogManagement.HttpApi.Client.ConsoleTestApp/IczpNet.LogManagement.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.LogManagement.Web.Host": {
+      "path": "host/IczpNet.LogManagement.Web.Host/IczpNet.LogManagement.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.LogManagement.AuthServer": {
+      "path": "host/IczpNet.LogManagement.AuthServer/IczpNet.LogManagement.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.LogManagement.Host.Shared": {
+      "path": "host/IczpNet.LogManagement.Host.Shared/IczpNet.LogManagement.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.LogManagement.Web.Unified": {
+      "path": "host/IczpNet.LogManagement.Web.Unified/IczpNet.LogManagement.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.LogManagement.Blazor": {
+      "path": "src/IczpNet.LogManagement.Blazor/IczpNet.LogManagement.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.Blazor.Host": {
+      "path": "host/IczpNet.LogManagement.Blazor.Host/IczpNet.LogManagement.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.LogManagement.Blazor.Server": {
+      "path": "src/IczpNet.LogManagement.Blazor.Server/IczpNet.LogManagement.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.Blazor.WebAssembly": {
+      "path": "src/IczpNet.LogManagement.Blazor.WebAssembly/IczpNet.LogManagement.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.LogManagement.Blazor.Server.Host": {
+      "path": "host/IczpNet.LogManagement.Blazor.Server.Host/IczpNet.LogManagement.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

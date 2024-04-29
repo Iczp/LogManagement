@@ -1,0 +1,20 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "MyAccount": "我的账户",
+    "SamplePageMessage": "LogManagement模块的示例页面"
+  },
+  "Permission:LogManagement": "日志管理",
+
+  "Permission:LogManagement.AuditLogPermissions": "审计日志",
+  "Permission:LogManagement.AuditLogPermissions.GetList": "列表",
+  "Permission:LogManagement.AuditLogPermissions.GetItem": "详情",
+
+  "Permission:LogManagement.SecurityLogPermissions": "安全日志",
+  "Permission:LogManagement.SecurityLogPermissions.GetList": "列表",
+  "Permission:LogManagement.SecurityLogPermissions.GetItem": "详情",
+
+  "Permission:LogManagement.CurrentUserSecurityLogPermissions": "登录用户日志",
+  "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetItem": "列表",
+  "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetList": "详情"
+}

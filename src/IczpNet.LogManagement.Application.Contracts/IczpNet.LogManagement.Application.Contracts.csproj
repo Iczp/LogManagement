@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;net7.0</TargetFrameworks>
+		<Nullable>disable</Nullable>
+		<RootNamespace>IczpNet.LogManagement</RootNamespace>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>IczpNet</Authors>
+		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Iczp/LogManagement.git</PackageProjectUrl>
+		<Version>0.1.1</Version>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Description>copyright (c) www.iczp.net </Description>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="7.3.0" />
+		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="7.3.0" />
+		<ProjectReference Include="..\IczpNet.LogManagement.Domain.Shared\IczpNet.LogManagement.Domain.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

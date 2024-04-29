@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "IczpNet.LogManagement": {
+      "path": "IczpNet.LogManagement.abpmdl.json"
+    }
+  }
+}

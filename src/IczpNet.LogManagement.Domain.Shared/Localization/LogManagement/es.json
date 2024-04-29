@@ -1,0 +1,20 @@
+{
+  "culture": "es",
+  "texts": {
+    "MyAccount": "Mi cuenta",
+    "SamplePageMessage": "Una página de ejemplo para el módulo LogManagement "
+  },
+  "Permission:LogManagement": "Log Management",
+
+  "Permission:LogManagement.AuditLogPermissions": "Audit Log",
+  "Permission:LogManagement.AuditLogPermissions.GetList": "Audit Log List",
+  "Permission:LogManagement.AuditLogPermissions.GetItem": "Audit Log Detail",
+
+  "Permission:LogManagement.SecurityLogPermissions": "Security Log",
+  "Permission:LogManagement.SecurityLogPermissions.GetList": "Security Log List",
+  "Permission:LogManagement.SecurityLogPermissions.GetItem": "Security Log Detail",
+
+  "Permission:LogManagement.CurrentUserSecurityLogPermissions": "Current User Security Log",
+  "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetItem": "List",
+  "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetList": "Detail"
+}
