@@ -10,7 +10,7 @@ public class LogManagementPermissionDefinitionProvider : PermissionDefinitionPro
     {
         var myGroup = context.AddGroup(LogManagementPermissions.GroupName, L("Permission:LogManagement"));
 
-        myGroup.AddPermissions<LogManagementPermissions>();
+        myGroup.AddPermissions<LogManagementPermissions>(x => L($"Permission:{x}"));
 
     }
 
