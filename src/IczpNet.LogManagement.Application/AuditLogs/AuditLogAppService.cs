@@ -44,8 +44,8 @@ public class AuditLogAppService : BaseGetListAppService<AuditLog, AuditLogDetail
             .WhereIf(input.StartExecutionTime.HasValue, x => x.ExecutionTime > input.StartExecutionTime)
             .WhereIf(input.EndExecutionTime.HasValue, x => x.ExecutionTime <= input.EndExecutionTime)
 
-            .WhereIf(string.IsNullOrWhiteSpace(input.Comments), x => x.Comments.Contains(input.Comments))
-            .WhereIf(string.IsNullOrWhiteSpace(input.BrowserInfo), x => x.BrowserInfo.Contains(input.BrowserInfo))
+            .WhereIf(!string.IsNullOrWhiteSpace(input.Comments), x => x.Comments.Contains(input.Comments))
+            .WhereIf(!string.IsNullOrWhiteSpace(input.BrowserInfo), x => x.BrowserInfo.Contains(input.BrowserInfo))
         ;
 
         return query;

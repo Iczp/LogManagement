@@ -21,7 +21,7 @@ https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-build
 ### Public to Nuget.org
 
 ```
-dotnet nuget push "src/*/bin/Release/*0.1.1.nupkg" --skip-duplicate -k {APIKEY} --source https://api.nuget.org/v3/index.json
+dotnet nuget push "src/*/bin/Release/*0.1.2.nupkg" --skip-duplicate -k {APIKEY} --source https://api.nuget.org/v3/index.json
 ```
 
 ## Dependency
@@ -38,6 +38,17 @@ abp add-module Volo.Abp.Identity
 
 ```bash
 abp add-module Volo.AuditLogging
+```
+
+## Usage
+
+### Api : `xxx.HttpApi.Host/xxHttpApiHostModule`
+
+```c#
+ Configure<AbpAspNetCoreMvcOptions>(options =>
+ {
+     options.ConventionalControllers.Create(typeof(LogManagementApplicationModule).Assembly);
+ });
 ```
 
 
