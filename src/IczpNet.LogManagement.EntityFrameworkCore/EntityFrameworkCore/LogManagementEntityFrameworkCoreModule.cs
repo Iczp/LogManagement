@@ -3,6 +3,7 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
+using Volo.Abp.AuditLogging;
 
 namespace IczpNet.LogManagement.EntityFrameworkCore;
 
@@ -11,16 +12,25 @@ namespace IczpNet.LogManagement.EntityFrameworkCore;
     typeof(AbpEntityFrameworkCoreModule)
 )]
 [DependsOn(typeof(AbpAuditLoggingEntityFrameworkCoreModule))]
-    [DependsOn(typeof(AbpIdentityEntityFrameworkCoreModule))]
-    public class LogManagementEntityFrameworkCoreModule : AbpModule
+[DependsOn(typeof(AbpIdentityEntityFrameworkCoreModule))]
+public class LogManagementEntityFrameworkCoreModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         context.Services.AddAbpDbContext<LogManagementDbContext>(options =>
         {
-                /* Add custom repositories here. Example:
-                 * options.AddRepository<Question, EfCoreQuestionRepository>();
-                 */
+            /* Add custom repositories here. Example:
+             * options.AddRepository<Question, EfCoreQuestionRepository>();
+             */
+            options.AddDefaultRepositories(includeAllEntities: true);
+        });
+
+        context.Services.AddAbpDbContext<AuditLoggingDbContext>(options =>
+        {
+            options.AddDefaultRepositories(includeAllEntities: true);
+            //options.AddRepository<AuditLogAction, EfCoreAuditLogRepository>();
+            //options.AddRepository<EntityChange, EfCoreAuditLogRepository>();
+            //options.AddRepository<EntityPropertyChange, EfCoreAuditLogRepository>();
         });
     }
 }

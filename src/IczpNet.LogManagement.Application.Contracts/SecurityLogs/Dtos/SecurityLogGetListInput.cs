@@ -23,7 +23,7 @@ public class CurrentUserSecurityLogGetListInput : GetListInput
 
     //public DateTime CreationTime { get; set; }
 
-    public virtual DateTime? StartCreationTime { get; set; }
+    public virtual DateTime? StartCreationTime { get; set; } = DateTime.Now.AddDays(-1);
 
     public virtual DateTime? EndCreationTime { get; set; }
 }

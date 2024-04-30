@@ -35,14 +35,15 @@ public class AuditLogAppService : BaseGetListAppService<AuditLog, AuditLogDetail
             .WhereIf(!string.IsNullOrWhiteSpace(input.ClientName), x => x.ClientName == input.ClientName)
             .WhereIf(!string.IsNullOrWhiteSpace(input.ClientIpAddress), x => x.ClientIpAddress == input.ClientIpAddress)
             .WhereIf(!string.IsNullOrWhiteSpace(input.ApplicationName), x => x.ApplicationName == input.ApplicationName)
+            .WhereIf(!string.IsNullOrWhiteSpace(input.Url), x => x.Url.StartsWith(input.Url))
             .WhereIf(input.HttpMethods != null && input.HttpMethods.Count != 0, x => input.HttpMethods!.Contains(x.HttpMethod))
             .WhereIf(input.HttpStatusCodes != null && input.HttpStatusCodes.Count != 0, x => input.HttpStatusCodes!.Contains(x.HttpStatusCode))
 
             .WhereIf(input.MinExecutionDuration.HasValue, x => x.ExecutionDuration > input.MinExecutionDuration)
             .WhereIf(input.MaxExecutionDuration.HasValue, x => x.ExecutionDuration <= input.MaxExecutionDuration)
 
-            .WhereIf(input.StartExecutionTime.HasValue, x => x.ExecutionTime > input.StartExecutionTime)
-            .WhereIf(input.EndExecutionTime.HasValue, x => x.ExecutionTime <= input.EndExecutionTime)
+            .WhereIf(input.StartExecutionTime.HasValue, x => x.ExecutionTime >= input.StartExecutionTime)
+            .WhereIf(input.EndExecutionTime.HasValue, x => x.ExecutionTime < input.EndExecutionTime)
 
             .WhereIf(!string.IsNullOrWhiteSpace(input.Comments), x => x.Comments.Contains(input.Comments))
             .WhereIf(!string.IsNullOrWhiteSpace(input.BrowserInfo), x => x.BrowserInfo.Contains(input.BrowserInfo))

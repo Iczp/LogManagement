@@ -4,12 +4,11 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using IczpNet.LogManagement.Localization;
 using System.Threading.Tasks;
-using System.Linq.Dynamic.Core;
 
 
 namespace IczpNet.LogManagement.BaseAppServices;
 
-public  class BaseGetListAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput>
+public abstract class BaseGetListAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput>
     //:CrudAppService
     : AbstractKeyReadOnlyAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput>
     where TEntity : class, IEntity<TKey>
@@ -24,7 +23,7 @@ public  class BaseGetListAppService<TEntity, TGetOutputDto, TGetListOutputDto, T
         ObjectMapperContext = typeof(LogManagementApplicationModule);
     }
 
-    protected override  Task<TEntity> GetEntityByIdAsync(TKey id)
+    protected override Task<TEntity> GetEntityByIdAsync(TKey id)
     {
         return Repository.GetAsync(id);
     }

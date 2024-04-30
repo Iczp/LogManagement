@@ -27,7 +27,7 @@ public class AuditLogGetListInput: GetListInput
 
     //public virtual DateTime ExecutionTime { get; set; }
 
-    public virtual DateTime? StartExecutionTime { get; set; }
+    public virtual DateTime? StartExecutionTime { get; set; } = DateTime.Now.AddDays(-1);
 
     public virtual DateTime? EndExecutionTime { get; set; }
 

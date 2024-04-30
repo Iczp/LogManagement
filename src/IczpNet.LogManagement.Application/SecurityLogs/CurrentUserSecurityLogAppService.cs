@@ -34,8 +34,8 @@ public class CurrentUserSecurityLogAppService : BaseGetListAppService<IdentitySe
             .WhereIf(!string.IsNullOrWhiteSpace(input.ClientIpAddress), x => x.ClientIpAddress == input.ClientIpAddress)
             .WhereIf(!string.IsNullOrWhiteSpace(input.ApplicationName), x => x.ApplicationName == input.ApplicationName)
             .WhereIf(input.Actions != null && input.Actions.Count != 0, x => input.Actions!.Contains(x.Action))
-            .WhereIf(input.StartCreationTime.HasValue, x => x.CreationTime > input.StartCreationTime)
-            .WhereIf(input.EndCreationTime.HasValue, x => x.CreationTime <= input.EndCreationTime)
+            .WhereIf(input.StartCreationTime.HasValue, x => x.CreationTime >= input.StartCreationTime)
+            .WhereIf(input.EndCreationTime.HasValue, x => x.CreationTime < input.EndCreationTime)
             .WhereIf(!string.IsNullOrWhiteSpace(input.BrowserInfo), x => x.BrowserInfo.Contains(input.BrowserInfo))
         ;
 

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using IczpNet.LogManagement.AuditLogActions.Dtos;
 using IczpNet.LogManagement.AuditLogs.Dtos;
 using IczpNet.LogManagement.SecurityLogs.Dtos;
 using Volo.Abp.AuditLogging;
@@ -17,6 +18,11 @@ public class LogManagementApplicationAutoMapperProfile : Profile
         //AuditLog
         CreateMap<AuditLog, AuditLogDto>();
         CreateMap<AuditLog, AuditLogDetailDto>()
+            .MapExtraProperties();
+
+        //AuditLog
+        CreateMap<AuditLogAction, AuditLogActionDto>();
+        CreateMap<AuditLogAction, AuditLogActionDetailDto>()
             .MapExtraProperties();
 
         //SecurityLog

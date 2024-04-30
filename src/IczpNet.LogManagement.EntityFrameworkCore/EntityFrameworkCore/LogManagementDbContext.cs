@@ -25,6 +25,6 @@ public class LogManagementDbContext : AbpDbContext<LogManagementDbContext>, ILog
 
         builder.ConfigureLogManagement();
         builder.ConfigureAuditLogging();
-            builder.ConfigureIdentity();
-        }
+        builder.ConfigureIdentity();
+    }
 }

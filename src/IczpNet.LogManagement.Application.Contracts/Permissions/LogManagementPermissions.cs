@@ -18,6 +18,14 @@ public class LogManagementPermissions
         public const string GetList = Default + "." + nameof(GetList);
     }
 
+    public class AuditLogActionPermissions
+    {
+        public const string Default = GroupName + "." + nameof(AuditLogActionPermissions);
+        public const string GetItem = Default + "." + nameof(GetItem);
+        public const string GetList = Default + "." + nameof(GetList);
+    }
+
+    
     public class SecurityLogPermissions
     {
         public const string Default = GroupName + "." + nameof(SecurityLogPermissions);
