@@ -25,7 +25,21 @@ public class LogManagementPermissions
         public const string GetList = Default + "." + nameof(GetList);
     }
 
-    
+    public class EntityPropertyChangePermissions
+    {
+        public const string Default = GroupName + "." + nameof(EntityPropertyChangePermissions);
+        public const string GetItem = Default + "." + nameof(GetItem);
+        public const string GetList = Default + "." + nameof(GetList);
+    }
+
+    public class EntityChangePermissions
+    {
+        public const string Default = GroupName + "." + nameof(EntityChangePermissions);
+        public const string GetItem = Default + "." + nameof(GetItem);
+        public const string GetList = Default + "." + nameof(GetList);
+    }
+
+
     public class SecurityLogPermissions
     {
         public const string Default = GroupName + "." + nameof(SecurityLogPermissions);
