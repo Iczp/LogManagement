@@ -2,30 +2,31 @@
   "culture": "zh-Hans",
   "texts": {
     "MyAccount": "我的账户",
-    "SamplePageMessage": "LogManagement模块的示例页面"
-  },
-  "Permission:LogManagement": "日志管理",
+    "SamplePageMessage": "LogManagement模块的示例页面",
 
-  "Permission:LogManagement.AuditLogPermissions": "审计日志",
-  "Permission:LogManagement.AuditLogPermissions.GetList": "列表",
-  "Permission:LogManagement.AuditLogPermissions.GetItem": "详情",
+    "Permission:LogManagement": "日志管理",
 
-  "Permission:LogManagement.SecurityLogPermissions": "安全日志",
-  "Permission:LogManagement.SecurityLogPermissions.GetList": "列表",
-  "Permission:LogManagement.SecurityLogPermissions.GetItem": "详情",
+    "Permission:LogManagement.AuditLogPermissions": "审计日志",
+    "Permission:LogManagement.AuditLogPermissions.GetList": "列表",
+    "Permission:LogManagement.AuditLogPermissions.GetItem": "详情",
 
-  "Permission:LogManagement.CurrentUserSecurityLogPermissions": "登录用户日志",
-  "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetItem": "列表",
-  "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetList": "详情",
+    "Permission:LogManagement.SecurityLogPermissions": "安全日志",
+    "Permission:LogManagement.SecurityLogPermissions.GetList": "列表",
+    "Permission:LogManagement.SecurityLogPermissions.GetItem": "详情",
 
-  "Permission:LogManagement.AuditLogActionPermissions": "审计日志方法",
-  "Permission:LogManagement.AuditLogActionPermissions.GetItem": "详情",
-  "Permission:LogManagement.AuditLogActionPermissions.GetList": "列表",
+    "Permission:LogManagement.CurrentUserSecurityLogPermissions": "登录用户日志",
+    "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetItem": "列表",
+    "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetList": "详情",
 
-  "Permission:LogManagement.EntityChangePermissions": "实体变更",
-  "Permission:LogManagement.EntityChangePermissions.GetItem": "详情",
-  "Permission:LogManagement.EntityChangePermissions.GetList": "列表",
-  "Permission:LogManagement.EntityPropertyChangePermissions": "实体属性变更",
-  "Permission:LogManagement.EntityPropertyChangePermissions.GetItem": "详情",
-  "Permission:LogManagement.EntityPropertyChangePermissions.GetList": "列表"
+    "Permission:LogManagement.AuditLogActionPermissions": "审计日志方法",
+    "Permission:LogManagement.AuditLogActionPermissions.GetItem": "详情",
+    "Permission:LogManagement.AuditLogActionPermissions.GetList": "列表",
+
+    "Permission:LogManagement.EntityChangePermissions": "实体变更",
+    "Permission:LogManagement.EntityChangePermissions.GetItem": "详情",
+    "Permission:LogManagement.EntityChangePermissions.GetList": "列表",
+    "Permission:LogManagement.EntityPropertyChangePermissions": "实体属性变更",
+    "Permission:LogManagement.EntityPropertyChangePermissions.GetItem": "详情",
+    "Permission:LogManagement.EntityPropertyChangePermissions.GetList": "列表"
+  }
 }

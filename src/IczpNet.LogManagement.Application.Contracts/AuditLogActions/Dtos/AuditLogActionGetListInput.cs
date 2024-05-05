@@ -13,7 +13,7 @@ public class AuditLogActionGetListInput: GetListInput
 
     public virtual string MethodName { get; set; }
 
-    public virtual DateTime? StartExecutionTime { get; set; } = DateTime.Now.AddDays(-1);
+    public virtual DateTime? StartExecutionTime { get; set; } = DateTime.Now.AddDays(-30);
 
     public virtual DateTime? EndExecutionTime { get; set; }
 
