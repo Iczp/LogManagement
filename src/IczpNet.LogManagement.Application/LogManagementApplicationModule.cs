@@ -3,6 +3,7 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
 using Volo.Abp.Identity;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.LogManagement;
 
@@ -13,7 +14,8 @@ namespace IczpNet.LogManagement;
     typeof(AbpAutoMapperModule)
     )]
 [DependsOn(typeof(AbpIdentityApplicationModule))]
-    public class LogManagementApplicationModule : AbpModule
+[DependsOn(typeof(AbpCommonsApplicationModule))]
+public class LogManagementApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

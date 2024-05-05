@@ -13,10 +13,12 @@
     "Permission:LogManagement.SecurityLogPermissions": "安全日志",
     "Permission:LogManagement.SecurityLogPermissions.GetList": "列表",
     "Permission:LogManagement.SecurityLogPermissions.GetItem": "详情",
+    "Permission:LogManagement.SecurityLogPermissions.GroupByActionPolicyName": "行为列表",
 
     "Permission:LogManagement.CurrentUserSecurityLogPermissions": "登录用户日志",
     "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetItem": "列表",
     "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetList": "详情",
+    "Permission:LogManagement.CurrentUserSecurityLogPermissions.GroupByActionPolicyName": "行为列表",
 
     "Permission:LogManagement.AuditLogActionPermissions": "审计日志方法",
     "Permission:LogManagement.AuditLogActionPermissions.GetItem": "详情",

@@ -4,6 +4,10 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using IczpNet.LogManagement.Localization;
 using System.Threading.Tasks;
+using System.Collections.Generic;
+using System.Linq;
+using System;
+using IczpNet.AbpCommons.Extensions;
 
 
 namespace IczpNet.LogManagement.BaseAppServices;
@@ -26,5 +30,22 @@ public abstract class BaseGetListAppService<TEntity, TGetOutputDto, TGetListOutp
     protected override Task<TEntity> GetEntityByIdAsync(TKey id)
     {
         return Repository.GetAsync(id);
+    }
+
+    protected virtual async Task<PagedResultDto<TOuputDto>> GetPagedListAsync<T, TOuputDto>(
+        IQueryable<T> query,
+        PagedAndSortedResultRequestDto input,
+        Func<IQueryable<T>, IQueryable<T>>? queryableAction = null,
+        Func<List<T>, Task<List<T>>>? entityAction = null)
+    {
+        return await query.ToPagedListAsync<T, TOuputDto>(AsyncExecuter, ObjectMapper, input, queryableAction, entityAction);
+    }
+    protected virtual async Task<PagedResultDto<T>> GetPagedListAsync<T>(
+        IQueryable<T> query,
+        PagedAndSortedResultRequestDto input,
+        Func<IQueryable<T>, IQueryable<T>>? queryableAction = null,
+        Func<List<T>, Task<List<T>>>? entityAction = null)
+    {
+        return await GetPagedListAsync<T, T>(query, input, queryableAction, entityAction);
     }
 }

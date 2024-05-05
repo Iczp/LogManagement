@@ -24,6 +24,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="IczpNet.AbpCommons.Application.Contracts" Version="0.1.6" />
 		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="7.3.0" />
 		<PackageReference Include="Volo.Abp.Authorization" Version="7.3.0" />
 		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="7.3.0" />

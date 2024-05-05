@@ -8,6 +8,7 @@ using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.Identity;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.LogManagement;
 
@@ -16,8 +17,9 @@ namespace IczpNet.LogManagement;
     typeof(AbpDddDomainSharedModule)
 )]
 [DependsOn(typeof(AbpAuditLoggingDomainSharedModule))]
-    [DependsOn(typeof(AbpIdentityDomainSharedModule))]
-    public class LogManagementDomainSharedModule : AbpModule
+[DependsOn(typeof(AbpIdentityDomainSharedModule))]
+[DependsOn(typeof(AbpCommonsDomainSharedModule))]
+public class LogManagementDomainSharedModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

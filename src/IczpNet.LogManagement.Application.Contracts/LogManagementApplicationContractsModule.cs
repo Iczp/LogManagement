@@ -2,6 +2,7 @@ using Volo.Abp.Application;
 using Volo.Abp.Modularity;
 using Volo.Abp.Authorization;
 using Volo.Abp.Identity;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.LogManagement;
 
@@ -11,7 +12,8 @@ namespace IczpNet.LogManagement;
     typeof(AbpAuthorizationModule)
     )]
 [DependsOn(typeof(AbpIdentityApplicationContractsModule))]
-    public class LogManagementApplicationContractsModule : AbpModule
+[DependsOn(typeof(AbpCommonsApplicationContractsModule))]
+public class LogManagementApplicationContractsModule : AbpModule
 {
 
 }

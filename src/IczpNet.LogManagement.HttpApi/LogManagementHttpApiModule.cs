@@ -5,6 +5,7 @@ using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Identity;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.LogManagement;
 
@@ -12,7 +13,8 @@ namespace IczpNet.LogManagement;
     typeof(LogManagementApplicationContractsModule),
     typeof(AbpAspNetCoreMvcModule))]
 [DependsOn(typeof(AbpIdentityHttpApiModule))]
-    public class LogManagementHttpApiModule : AbpModule
+[DependsOn(typeof(AbpCommonsHttpApiModule))]
+public class LogManagementHttpApiModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

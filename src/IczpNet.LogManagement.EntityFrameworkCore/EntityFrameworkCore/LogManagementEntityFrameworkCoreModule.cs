@@ -3,7 +3,7 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.AuditLogging.EntityFrameworkCore;
 using Volo.Abp.Identity.EntityFrameworkCore;
-using Volo.Abp.AuditLogging;
+using IczpNet.AbpCommons.EntityFrameworkCore;
 
 namespace IczpNet.LogManagement.EntityFrameworkCore;
 
@@ -13,6 +13,7 @@ namespace IczpNet.LogManagement.EntityFrameworkCore;
 )]
 [DependsOn(typeof(AbpAuditLoggingEntityFrameworkCoreModule))]
 [DependsOn(typeof(AbpIdentityEntityFrameworkCoreModule))]
+[DependsOn(typeof(AbpCommonsEntityFrameworkCoreModule))]
 public class LogManagementEntityFrameworkCoreModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

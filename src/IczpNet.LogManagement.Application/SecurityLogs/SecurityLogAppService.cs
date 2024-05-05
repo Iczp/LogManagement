@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Volo.Abp.Identity;
 using Volo.Abp.Domain.Repositories;
 using IczpNet.LogManagement.BaseAppServices;
+using Volo.Abp.Application.Dtos;
+using IczpNet.LogManagement.BaseDtos;
 
 namespace IczpNet.LogManagement.SecurityLogs;
 
@@ -14,10 +16,10 @@ public class SecurityLogAppService : BaseGetListAppService<IdentitySecurityLog, 
 {
     protected override string GetListPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GetList;
     protected override string GetPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GetItem;
-
+    protected virtual string GroupByActionPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GroupByActionPolicyName;
     public SecurityLogAppService(IRepository<IdentitySecurityLog, Guid> repository) : base(repository)
     {
-       
+
     }
 
     protected override async Task<IQueryable<IdentitySecurityLog>> CreateFilteredQueryAsync(SecurityLogGetListInput input)
@@ -44,6 +46,22 @@ public class SecurityLogAppService : BaseGetListAppService<IdentitySecurityLog, 
     protected override IQueryable<IdentitySecurityLog> ApplyDefaultSorting(IQueryable<IdentitySecurityLog> query)
     {
         return query.OrderByDescending(x => x.CreationTime);
-        //return base.ApplyDefaultSorting(query);
+    }
+
+    public virtual async Task<PagedResultDto<KeyValueDto>> GetListActionsAsync(SecurityLogActionGetListInput input)
+    {
+        await CheckPolicyAsync(GroupByActionPolicyName);
+
+        var countQuery = (await Repository.GetQueryableAsync())
+            .WhereIf(!string.IsNullOrWhiteSpace(input.UserName), x => x.UserName == input.UserName)
+            .GroupBy(x => x.Action)
+            .Select(x => new KeyValueDto()
+            {
+                Key = x.Key,
+                Count = x.Count()
+            })
+            ;
+
+        return await GetPagedListAsync<KeyValueDto>(countQuery, input);
     }
 }

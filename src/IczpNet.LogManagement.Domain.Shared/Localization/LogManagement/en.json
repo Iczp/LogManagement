@@ -13,10 +13,12 @@
     "Permission:LogManagement.SecurityLogPermissions": "Security Log",
     "Permission:LogManagement.SecurityLogPermissions.GetList": "GetList",
     "Permission:LogManagement.SecurityLogPermissions.GetItem": "GetItem",
+    "Permission:LogManagement.SecurityLogPermissions.GroupByActionPolicyName": "Actons",
 
     "Permission:LogManagement.CurrentUserSecurityLogPermissions": "CurrentUser Security Log",
     "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetItem": "GetItem",
     "Permission:LogManagement.CurrentUserSecurityLogPermissions.GetList": "GetList",
+    "Permission:LogManagement.CurrentUserSecurityLogPermissions.GroupByActionPolicyName": "Actons",
 
     "Permission:LogManagement.AuditLogActionPermissions": "Audit Log Action",
     "Permission:LogManagement.AuditLogActionPermissions.GetItem": "GetItem",
