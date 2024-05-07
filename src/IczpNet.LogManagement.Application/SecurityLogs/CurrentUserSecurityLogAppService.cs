@@ -11,6 +11,9 @@ using IczpNet.LogManagement.BaseDtos;
 
 namespace IczpNet.LogManagement.SecurityLogs;
 
+/// <summary>
+/// 当前登录用户安全日志
+/// </summary>
 public class CurrentUserSecurityLogAppService : SecurityLogAppService, ICurrentUserSecurityLogAppService
 {
     protected override string GetListPolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GetList;
@@ -42,6 +45,11 @@ public class CurrentUserSecurityLogAppService : SecurityLogAppService, ICurrentU
         return entity;
     }
 
+    /// <summary>
+    /// Actions 列表
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
     public override Task<PagedResultDto<KeyValueDto>> GetListActionsAsync(SecurityLogActionGetListInput input)
     {
         input.UserName = CurrentUser.UserName;

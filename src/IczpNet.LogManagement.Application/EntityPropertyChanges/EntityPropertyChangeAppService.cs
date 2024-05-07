@@ -5,12 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Volo.Abp.Auditing;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.Domain.Repositories;
 
 namespace IczpNet.LogManagement.EntityPropertyChanges;
 
+/// <summary>
+/// 实体属性变更
+/// </summary>
 public class EntityPropertyChangeAppService : BaseGetListAppService<EntityPropertyChange, EntityPropertyChangeDetailDto, EntityPropertyChangeDto, Guid, EntityPropertyChangeGetListInput>, IEntityPropertyChangeAppService
 {
 

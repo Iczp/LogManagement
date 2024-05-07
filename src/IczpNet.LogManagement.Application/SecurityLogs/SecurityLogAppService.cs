@@ -12,6 +12,9 @@ using IczpNet.LogManagement.BaseDtos;
 
 namespace IczpNet.LogManagement.SecurityLogs;
 
+/// <summary>
+/// 用户安全日志
+/// </summary>
 public class SecurityLogAppService : BaseGetListAppService<IdentitySecurityLog, SecurityLogDetailDto, SecurityLogDto, Guid, SecurityLogGetListInput>, ISecurityLogAppService
 {
     protected override string GetListPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GetList;

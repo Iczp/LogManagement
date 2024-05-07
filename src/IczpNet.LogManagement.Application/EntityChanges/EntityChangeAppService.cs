@@ -11,6 +11,9 @@ using Volo.Abp.Domain.Repositories;
 
 namespace IczpNet.LogManagement.EntityChanges;
 
+/// <summary>
+/// 实体变更
+/// </summary>
 public class EntityChangeAppService : BaseGetListAppService<EntityChange, EntityChangeDetailDto, EntityChangeDto, Guid, EntityChangeGetListInput>, IEntityChangeAppService
 {
 
