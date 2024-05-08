@@ -11,7 +11,7 @@
 		<Authors>IczpNet</Authors>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/Iczp/LogManagement.git</PackageProjectUrl>
-		<Version>0.1.5</Version>
+		<Version>0.1.6</Version>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>copyright (c) www.iczp.net </Description>
