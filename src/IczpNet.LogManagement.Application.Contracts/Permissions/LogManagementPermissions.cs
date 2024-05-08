@@ -16,6 +16,10 @@ public class LogManagementPermissions
         public const string Default = GroupName + "." + nameof(AuditLogPermissions);
         public const string GetItem = Default + "." + nameof(GetItem);
         public const string GetList = Default + "." + nameof(GetList);
+        public const string GroupByApplicationName = Default + "." + nameof(GroupByApplicationName);
+        public const string GroupByClientId = Default + "." + nameof(GroupByClientId);
+        public const string GroupByHttpMethod = Default + "." + nameof(GroupByHttpMethod);
+        public const string GroupByHttpStatusCode = Default + "." + nameof(GroupByHttpStatusCode);
     }
 
     public class AuditLogActionPermissions
@@ -23,6 +27,7 @@ public class LogManagementPermissions
         public const string Default = GroupName + "." + nameof(AuditLogActionPermissions);
         public const string GetItem = Default + "." + nameof(GetItem);
         public const string GetList = Default + "." + nameof(GetList);
+        public const string GroupByServiceName = Default + "." + nameof(GroupByServiceName);
     }
 
     public class EntityPropertyChangePermissions
@@ -45,13 +50,18 @@ public class LogManagementPermissions
         public const string Default = GroupName + "." + nameof(SecurityLogPermissions);
         public const string GetItem = Default + "." + nameof(GetItem);
         public const string GetList = Default + "." + nameof(GetList);
-        public const string GroupByActionPolicyName = Default + "." + nameof(GroupByActionPolicyName);
+        public const string GroupByAction = Default + "." + nameof(GroupByAction);
+        public const string GroupByApplicationName = Default + "." + nameof(GroupByApplicationName);
+        public const string GroupByClientId = Default + "." + nameof(GroupByClientId);
     }
+
     public class CurrentUserSecurityLogPermissions
     {
         public const string Default = GroupName + "." + nameof(CurrentUserSecurityLogPermissions);
         public const string GetItem = Default + "." + nameof(GetItem);
         public const string GetList = Default + "." + nameof(GetList);
-        public const string GroupByActionPolicyName = Default + "." + nameof(GroupByActionPolicyName);
+        public const string GroupByAction = Default + "." + nameof(GroupByAction);
+        public const string GroupByApplicationName = Default + "." + nameof(GroupByApplicationName);
+        public const string GroupByClientId = Default + "." + nameof(GroupByClientId);
     }
 }

@@ -1,10 +1,12 @@
 ﻿using IczpNet.LogManagement.AuditLogActions.Dtos;
 using IczpNet.LogManagement.BaseAppServices;
+using IczpNet.LogManagement.BaseDtos;
 using IczpNet.LogManagement.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Auditing;
 using Volo.Abp.AuditLogging;
 using Volo.Abp.Domain.Repositories;
@@ -16,6 +18,7 @@ public class AuditLogActionAppService : BaseGetListAppService<AuditLogAction, Au
 
     protected override string GetListPolicyName { get; set; } = LogManagementPermissions.AuditLogActionPermissions.GetList;
     protected override string GetPolicyName { get; set; } = LogManagementPermissions.AuditLogActionPermissions.GetItem;
+    protected virtual string GroupByServiceNamePolicyName { get; set; } = LogManagementPermissions.AuditLogActionPermissions.GroupByServiceName;
     protected IAuditingManager AuditingManager { get; }
     protected IAuditingStore AuditingStore { get; }
 
@@ -44,4 +47,17 @@ public class AuditLogActionAppService : BaseGetListAppService<AuditLogAction, Au
     {
         return query.OrderByDescending(x => x.ExecutionTime);
     }
+
+    /// <summary>
+    /// ServiceName 列表
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public virtual async Task<PagedResultDto<KeyValueDto<string>>> GetListApplicationNamesAsync(GetListInput input)
+    {
+        return await GetEntityGroupListAsync(
+            x => x,
+            input, GroupByServiceNamePolicyName, x => x.ServiceName);
+    }
+
 }

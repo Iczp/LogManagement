@@ -9,6 +9,7 @@ using Volo.Abp.Domain.Repositories;
 using IczpNet.LogManagement.BaseAppServices;
 using Volo.Abp.Application.Dtos;
 using IczpNet.LogManagement.BaseDtos;
+using System.Linq.Expressions;
 
 namespace IczpNet.LogManagement.SecurityLogs;
 
@@ -19,7 +20,10 @@ public class SecurityLogAppService : BaseGetListAppService<IdentitySecurityLog, 
 {
     protected override string GetListPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GetList;
     protected override string GetPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GetItem;
-    protected virtual string GroupByActionPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GroupByActionPolicyName;
+    protected virtual string GroupByActionPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GroupByAction;
+    protected virtual string GroupByApplicationNamePolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GroupByApplicationName;
+    protected virtual string GroupByClientIdPolicyName { get; set; } = LogManagementPermissions.SecurityLogPermissions.GroupByClientId;
+
     public SecurityLogAppService(IRepository<IdentitySecurityLog, Guid> repository) : base(repository)
     {
 
@@ -51,20 +55,41 @@ public class SecurityLogAppService : BaseGetListAppService<IdentitySecurityLog, 
         return query.OrderByDescending(x => x.CreationTime);
     }
 
-    public virtual async Task<PagedResultDto<KeyValueDto>> GetListActionsAsync(SecurityLogActionGetListInput input)
+    protected virtual async Task<PagedResultDto<KeyValueDto<TKeyType>>> GetListGroupByAsync<TKeyType>(SecurityLogGroupGetListInput input, string policyName, Expression<Func<IdentitySecurityLog, TKeyType>> keySelector)
     {
-        await CheckPolicyAsync(GroupByActionPolicyName);
-
-        var countQuery = (await Repository.GetQueryableAsync())
-            .WhereIf(!string.IsNullOrWhiteSpace(input.UserName), x => x.UserName == input.UserName)
-            .GroupBy(x => x.Action)
-            .Select(x => new KeyValueDto()
-            {
-                Key = x.Key,
-                Count = x.Count()
-            })
-            ;
-
-        return await GetPagedListAsync<KeyValueDto>(countQuery, input);
+        return await GetEntityGroupListAsync(
+            x => x.WhereIf(!string.IsNullOrWhiteSpace(input.UserName), x => x.UserName == input.UserName),
+            input, policyName, keySelector);
     }
+
+    /// <summary>
+    /// Actions 列表
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public virtual async Task<PagedResultDto<KeyValueDto<string>>> GetListActionsAsync(SecurityLogGroupGetListInput input)
+    {
+        return await GetListGroupByAsync(input, GroupByActionPolicyName, x => x.Action);
+    }
+
+    /// <summary>
+    /// ApplicationName 列表
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public virtual async Task<PagedResultDto<KeyValueDto<string>>> GetListApplicationNamesAsync(SecurityLogGroupGetListInput input)
+    {
+        return await GetListGroupByAsync(input, GroupByApplicationNamePolicyName, x => x.ApplicationName);
+    }
+
+    /// <summary>
+    /// ClientId 列表
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns></returns>
+    public virtual async Task<PagedResultDto<KeyValueDto<string>>> GetListClientIdsAsync(SecurityLogGroupGetListInput input)
+    {
+        return await GetListGroupByAsync(input, GroupByClientIdPolicyName, x => x.ClientId);
+    }
+
 }

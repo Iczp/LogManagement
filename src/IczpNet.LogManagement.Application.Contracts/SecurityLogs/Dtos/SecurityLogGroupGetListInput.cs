@@ -2,7 +2,7 @@
 
 namespace IczpNet.LogManagement.SecurityLogs.Dtos;
 
-public class SecurityLogActionGetListInput : GetListInput
+public class SecurityLogGroupGetListInput : GetListInput
 {
     public string UserName { get; set; }
 }

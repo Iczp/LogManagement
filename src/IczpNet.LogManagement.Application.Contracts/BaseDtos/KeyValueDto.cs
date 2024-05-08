@@ -1,10 +1,15 @@
 ﻿namespace IczpNet.LogManagement.BaseDtos;
 
-public class KeyValueDto
+public class KeyValueDto : KeyValueDto<string>
 {
-    public string Key { set; get; }
 
-    public string Value { set; get; }
+}
 
-    public int? Count { set; get; }
+public class KeyValueDto<TType> //where T : struct
+{
+    public virtual TType Key { set; get; }
+
+    public virtual string Value { set; get; }
+
+    public virtual int? Count { set; get; }
 }

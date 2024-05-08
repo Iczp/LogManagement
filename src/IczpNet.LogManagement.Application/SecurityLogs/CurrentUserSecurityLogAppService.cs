@@ -8,6 +8,7 @@ using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Application.Dtos;
 using IczpNet.LogManagement.BaseDtos;
+using System.Linq.Expressions;
 
 namespace IczpNet.LogManagement.SecurityLogs;
 
@@ -18,9 +19,9 @@ public class CurrentUserSecurityLogAppService : SecurityLogAppService, ICurrentU
 {
     protected override string GetListPolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GetList;
     protected override string GetPolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GetItem;
-
-    protected override string GroupByActionPolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GroupByActionPolicyName;
-
+    protected override string GroupByActionPolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GroupByAction;
+    protected override string GroupByApplicationNamePolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GroupByApplicationName;
+    protected override string GroupByClientIdPolicyName { get; set; } = LogManagementPermissions.CurrentUserSecurityLogPermissions.GroupByClientId;
     public CurrentUserSecurityLogAppService(IRepository<IdentitySecurityLog, Guid> repository) : base(repository)
     {
 
@@ -45,15 +46,9 @@ public class CurrentUserSecurityLogAppService : SecurityLogAppService, ICurrentU
         return entity;
     }
 
-    /// <summary>
-    /// Actions 列表
-    /// </summary>
-    /// <param name="input"></param>
-    /// <returns></returns>
-    public override Task<PagedResultDto<KeyValueDto>> GetListActionsAsync(SecurityLogActionGetListInput input)
+    protected override Task<PagedResultDto<KeyValueDto<TKeyType>>> GetListGroupByAsync<TKeyType>(SecurityLogGroupGetListInput input, string policyName, Expression<Func<IdentitySecurityLog, TKeyType>> keySelector)
     {
         input.UserName = CurrentUser.UserName;
-
-        return base.GetListActionsAsync(input);
+        return base.GetListGroupByAsync(input, policyName, keySelector);
     }
 }
