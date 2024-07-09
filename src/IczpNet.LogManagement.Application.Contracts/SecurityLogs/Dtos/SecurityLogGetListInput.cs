@@ -4,31 +4,31 @@ using System.Collections.Generic;
 
 namespace IczpNet.LogManagement.SecurityLogs.Dtos;
 
-public class SecurityLogGetListInput: GetListInput
+public  class SecurityLogGetListInput: GetListInput
 {
-    public Guid? TenantId { get; set; }
+    public virtual Guid? TenantId { get; set; }
 
-    public string ApplicationName { get; set; }
+    public virtual string ApplicationName { get; set; }
 
-    public string Identity { get; set; }
+    public virtual string Identity { get; set; }
 
-    public List<string> Actions { get; set; }
+    public virtual List<string> Actions { get; set; }
 
-    public Guid? UserId { get; set; }
+    public virtual Guid? UserId { get; set; }
 
-    public string UserName { get; set; }
+    public virtual string UserName { get; set; }
 
-    public string TenantName { get; set; }
+    public virtual string TenantName { get; set; }
 
-    public string ClientId { get; set; }
+    public virtual string ClientId { get; set; }
 
-    public string CorrelationId { get; set; }
+    public virtual string CorrelationId { get; set; }
 
-    public string ClientIpAddress { get; set; }
+    public virtual string ClientIpAddress { get; set; }
 
-    public string BrowserInfo { get; set; }
+    public virtual string BrowserInfo { get; set; }
 
-    //public DateTime CreationTime { get; set; }
+    //public virtual DateTime CreationTime { get; set; }
 
     public virtual DateTime? StartCreationTime { get; set; }
 
