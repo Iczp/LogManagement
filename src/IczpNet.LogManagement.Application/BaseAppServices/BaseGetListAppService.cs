@@ -10,10 +10,11 @@ using System;
 using IczpNet.AbpCommons.Extensions;
 using IczpNet.LogManagement.BaseDtos;
 using System.Linq.Expressions;
+using Microsoft.AspNetCore.Mvc;
 
 
 namespace IczpNet.LogManagement.BaseAppServices;
-
+[ApiExplorerSettings(GroupName = LogManagementRemoteServiceConsts.ModuleName)]
 public abstract class BaseGetListAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput>
     //:CrudAppService
     : AbstractKeyReadOnlyAppService<TEntity, TGetOutputDto, TGetListOutputDto, TKey, TGetListInput>

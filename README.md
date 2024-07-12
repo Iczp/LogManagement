@@ -5,7 +5,7 @@ An abp module that provides standard tree structure entity implement.
 ### Create project by Abp Cli
 
 ```
-abp new IczpNet.LogManagementDemo -t module --no-ui
+abp new IczpNet.OpenIddict -t module --no-ui -v 7.3.0
 ```
 
 

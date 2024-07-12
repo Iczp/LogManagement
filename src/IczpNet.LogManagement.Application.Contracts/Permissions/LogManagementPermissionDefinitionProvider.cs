@@ -1,4 +1,5 @@
-﻿using IczpNet.LogManagement.Localization;
+﻿using IczpNet.AbpCommons.Permissions;
+using IczpNet.LogManagement.Localization;
 using Volo.Abp.Authorization.Permissions;
 using Volo.Abp.Localization;
 
