@@ -8,7 +8,7 @@ using Volo.Abp.Identity;
 using Volo.Abp.Domain.Repositories;
 using IczpNet.LogManagement.BaseAppServices;
 using Volo.Abp.Application.Dtos;
-using IczpNet.LogManagement.BaseDtos;
+using IczpNet.AbpCommons.Dtos;
 using System.Linq.Expressions;
 
 namespace IczpNet.LogManagement.SecurityLogs;

@@ -1,4 +1,4 @@
-﻿using IczpNet.LogManagement.BaseDtos;
+﻿using IczpNet.AbpCommons.Dtos;
 using IczpNet.LogManagement.SecurityLogs.Dtos;
 using System;
 using System.Threading.Tasks;

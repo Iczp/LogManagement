@@ -1,6 +1,6 @@
 ﻿using IczpNet.LogManagement.AuditLogActions.Dtos;
 using IczpNet.LogManagement.BaseAppServices;
-using IczpNet.LogManagement.BaseDtos;
+using IczpNet.AbpCommons.Dtos;
 using IczpNet.LogManagement.Permissions;
 using System;
 using System.Collections.Generic;

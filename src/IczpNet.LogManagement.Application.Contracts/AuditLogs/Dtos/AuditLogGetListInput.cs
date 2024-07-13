@@ -1,4 +1,4 @@
-﻿using IczpNet.LogManagement.BaseDtos;
+﻿using IczpNet.AbpCommons.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Text;

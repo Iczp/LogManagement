@@ -1,4 +1,4 @@
-﻿using IczpNet.LogManagement.BaseDtos;
+﻿using IczpNet.AbpCommons.Dtos;
 using System;
 
 namespace IczpNet.LogManagement.AuditLogActions.Dtos;
