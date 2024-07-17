@@ -4,7 +4,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -33,11 +33,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="IczpNet.AbpCommons.EntityFrameworkCore" Version="0.1.9" />
+    <PackageReference Include="IczpNet.AbpCommons.EntityFrameworkCore" Version="0.8.0" />
     <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="8.2.0" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="8.2.0" />
     <PackageReference Include="Volo.Abp.Identity.EntityFrameworkCore" Version="8.2.0" />
     <ProjectReference Include="..\IczpNet.LogManagement.Domain\IczpNet.LogManagement.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="ConfigureAwait.Fody" Version="3.3.2" />
+    <PackageReference Update="Fody" Version="6.8.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
