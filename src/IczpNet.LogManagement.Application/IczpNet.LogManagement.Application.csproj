@@ -4,7 +4,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<Version>8.2.0.1</Version>
+		<Version>8.2.0.2</Version>
 		<Nullable>disable</Nullable>
 		<RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
@@ -38,7 +38,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IczpNet.AbpCommons.Application" Version="0.8.0" />
+		<PackageReference Include="IczpNet.AbpCommons.Application" Version="0.8.2" />
 		<!--<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.2.0" />-->
 		<PackageReference Include="Volo.Abp.AutoMapper" Version="8.2.0" />
 		<PackageReference Include="Volo.Abp.Ddd.Application" Version="8.2.0" />

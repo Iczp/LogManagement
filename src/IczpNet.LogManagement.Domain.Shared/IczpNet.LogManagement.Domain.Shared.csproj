@@ -4,7 +4,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<Version>8.2.0.1</Version>
+		<Version>8.2.0.2</Version>
 		<Nullable>disable</Nullable>
 		<RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
@@ -19,7 +19,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="IczpNet.AbpCommons.Domain.Shared" Version="0.8.0" />
+		<PackageReference Include="IczpNet.AbpCommons.Domain.Shared" Version="0.8.2" />
 		<PackageReference Include="Volo.Abp.AuditLogging.Domain.Shared" Version="8.2.0" />
 		<PackageReference Include="Volo.Abp.Ddd.Domain.Shared" Version="8.2.0" />
 		<PackageReference Include="Volo.Abp.Identity.Domain.Shared" Version="8.2.0" />
