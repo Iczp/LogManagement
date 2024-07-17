@@ -3,21 +3,26 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>disable</Nullable>
-    <RootNamespace>IczpNet.LogManagement</RootNamespace>
-		<GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Authors>IczpNet</Authors>
+		<TargetFramework>net8.0</TargetFramework>
+		<Version>8.2.0.1</Version>
+		<Nullable>disable</Nullable>
+		<RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/Iczp/LogManagement.git</PackageProjectUrl>
-		<Version>8.2.0.1</Version>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-		<Description>copyright (c) www.iczp.net </Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>IczpNet</Authors>
+		<PackageIcon>IczpNet.jpg</PackageIcon>
+		<Copyright>(c) iczp.net</Copyright>
+		<Description>copyright (c) www.iczp.net</Description>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\IczpNet.jpg" Link="IczpNet.jpg">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
     <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

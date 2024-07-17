@@ -4,15 +4,17 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
+		<Version>8.2.0.1</Version>
 		<Nullable>disable</Nullable>
 		<RootNamespace>IczpNet.LogManagement</RootNamespace>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<Authors>IczpNet</Authors>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/Iczp/LogManagement.git</PackageProjectUrl>
-		<Version>8.2.0.1</Version>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>IczpNet</Authors>
+		<PackageIcon>IczpNet.jpg</PackageIcon>
+		<Copyright>(c) iczp.net</Copyright>
 		<Description>copyright (c) www.iczp.net</Description>
 	</PropertyGroup>
 
@@ -25,6 +27,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Include="..\..\IczpNet.jpg" Link="IczpNet.jpg">
+			<PackagePath>\</PackagePath>
+			<Pack>True</Pack>
+		</None>
 	  <None Include="..\..\README.md">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
@@ -33,7 +39,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="IczpNet.AbpCommons.Application" Version="0.8.0" />
-		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.2.0" />
+		<!--<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="8.2.0" />-->
 		<PackageReference Include="Volo.Abp.AutoMapper" Version="8.2.0" />
 		<PackageReference Include="Volo.Abp.Ddd.Application" Version="8.2.0" />
 		<PackageReference Include="Volo.Abp.Identity.Application" Version="8.2.0" />
