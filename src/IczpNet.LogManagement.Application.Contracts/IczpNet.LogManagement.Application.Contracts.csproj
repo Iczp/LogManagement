@@ -15,7 +15,7 @@
 		<Authors>IczpNet</Authors>
 		<PackageIcon>IczpNet.jpg</PackageIcon>
 		<Copyright>(c) iczp.net</Copyright>
-		<Description>copyright (c) www.iczp.net</Description>
+		<Description>Log management for abp. audit[action] log, entity change log, security log.</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
