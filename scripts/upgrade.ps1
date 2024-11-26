@@ -59,6 +59,20 @@ Get-ChildItem -Path $projectsPath -Recurse -Filter *.csproj | ForEach-Object {
     # }
 }
 
+Write-Host "所有包升到最新版本" -ForegroundColor Cyan
+
+Get-ChildItem -Path .\ -Filter *.csproj | ForEach-Object {
+    $projectPath = $_.FullName
+    Write-Host "Updating packages for project: $projectPath"
+    # 获取项目中的所有包
+    $packages = dotnet list $projectPath package | Select-String -Pattern "^([^ ]+) " | ForEach-Object { $_.Matches[0].Groups[1].Value }
+    # 遍历每个包并尝试更新到最新版本
+    foreach ($package in $packages) {
+        Write-Host "Updating package: $package"
+        dotnet add $projectPath package $package --version latest
+    }
+}
+
 # 2. 还原依赖项并检查构建
 Write-Host "还原依赖项并构建项目..." -ForegroundColor Cyan
 cd $projectsPath
@@ -117,19 +131,7 @@ abp update
 #     Write-Host "推送到 NuGet 源已取消。" -ForegroundColor Yellow
 # }
 
-Write-Host "所有包升到最新版本" -ForegroundColor Cyan
 
-Get-ChildItem -Path .\ -Filter *.csproj | ForEach-Object {
-    $projectPath = $_.FullName
-    Write-Host "Updating packages for project: $projectPath"
-    # 获取项目中的所有包
-    $packages = dotnet list $projectPath package | Select-String -Pattern "^([^ ]+) " | ForEach-Object { $_.Matches[0].Groups[1].Value }
-    # 遍历每个包并尝试更新到最新版本
-    foreach ($package in $packages) {
-        Write-Host "Updating package: $package"
-        dotnet add $projectPath package $package --version latest
-    }
-}
 
 
 
