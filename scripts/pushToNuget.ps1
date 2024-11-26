@@ -87,7 +87,7 @@ if ($confirmPush -eq "y") {
     }
     Write-Host "所有包已成功推送到 NuGet 源。" -ForegroundColor Green
 
-    Write-Host "查看 https://www.nuget.org/packages?q=IczpNet.OpenIddict" -ForegroundColor Green
+    Write-Host "查看 https://www.nuget.org/packages?q=IczpNet.LogManagement" -ForegroundColor Green
     
 }
 else {
