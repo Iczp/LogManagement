@@ -11,7 +11,8 @@ if ($gitStatus) {
     Write-Host "检测到未提交的更改，请先提交或暂存以下文件：" -ForegroundColor Red
     Write-Host $gitStatus
     exit 1
-} else {
+}
+else {
     Write-Host "没有未提交的 Git 更改，继续执行脚本。" -ForegroundColor Green
 }
 
@@ -19,7 +20,8 @@ if ($gitStatus) {
 if (Test-Path $nugetKeyFilePath) {
     $nugetApiKey = Get-Content $nugetKeyFilePath -ErrorAction Stop
     Write-Host "已成功读取 NuGet API Key: $nugetApiKey" -ForegroundColor Green
-} else {
+}
+else {
     Write-Error "未找到 NuGet API Key 文件，请检查路径：$nugetKeyFilePath"
     exit 1
 }
@@ -30,7 +32,7 @@ $defaultVersion = "9.0.0"
 $newVersion = Read-Host "请输入新的版本号 (例如 $defaultVersion)"
 if (-not $newVersion) {
     $newVersion = $defaultVersion
-    Write-Host "使用版本号: $nugetApiKey" -ForegroundColor Yellow
+    Write-Host "使用版本号: $newVersion" -ForegroundColor Yellow
     # exit 1
 }
 
@@ -63,7 +65,8 @@ cd $projectsPath
 dotnet restore
 if ($?) {
     Write-Host "依赖项还原成功。" -ForegroundColor Green
-} else {
+}
+else {
     Write-Error "依赖项还原失败，请检查项目配置。" 
     exit 1
 }
@@ -113,5 +116,21 @@ abp update
 # } else {
 #     Write-Host "推送到 NuGet 源已取消。" -ForegroundColor Yellow
 # }
+
+Write-Host "所有包升到最新版本" -ForegroundColor Cyan
+
+Get-ChildItem -Path .\ -Filter *.csproj | ForEach-Object {
+    $projectPath = $_.FullName
+    Write-Host "Updating packages for project: $projectPath"
+    # 获取项目中的所有包
+    $packages = dotnet list $projectPath package | Select-String -Pattern "^([^ ]+) " | ForEach-Object { $_.Matches[0].Groups[1].Value }
+    # 遍历每个包并尝试更新到最新版本
+    foreach ($package in $packages) {
+        Write-Host "Updating package: $package"
+        dotnet add $projectPath package $package --version latest
+    }
+}
+
+
 
 Write-Host "脚本执行完成！" -ForegroundColor Cyan

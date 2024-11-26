@@ -3,8 +3,8 @@
 	<Import Project="..\..\common.props" />
 
 	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Version>8.2.0.3</Version>
+		<TargetFramework>net9.0</TargetFramework>
+		<Version>9.0.0</Version>
 		<Nullable>disable</Nullable>
 		<RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
@@ -31,9 +31,9 @@
 
 	<ItemGroup>
 		<PackageReference Include="IczpNet.AbpCommons.Application.Contracts" Version="0.8.2" />
-		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="8.2.0" />
-		<PackageReference Include="Volo.Abp.Authorization" Version="8.2.0" />
-		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="8.2.0" />
+		<PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="9.0.0" />
+		<PackageReference Include="Volo.Abp.Authorization" Version="9.0.0" />
+		<PackageReference Include="Volo.Abp.Identity.Application.Contracts" Version="9.0.0" />
 		<ProjectReference Include="..\IczpNet.LogManagement.Domain.Shared\IczpNet.LogManagement.Domain.Shared.csproj" />
 	</ItemGroup>
 
