@@ -1,10 +1,10 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Version>8.2.0.3</Version>
+		<TargetFramework>net9.0</TargetFramework>
+		<Version>9.0.0.903</Version>
 		<Nullable>disable</Nullable>
 		<RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
@@ -19,8 +19,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client" Version="8.2.0" />
-    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="8.2.0" />
+    <PackageReference Include="Volo.Abp.Http.Client" Version="9.0.3" />
+    <PackageReference Include="Volo.Abp.Identity.HttpApi.Client" Version="9.0.3" />
     <ProjectReference Include="..\IczpNet.LogManagement.Application.Contracts\IczpNet.LogManagement.Application.Contracts.csproj" />
   </ItemGroup>
 
@@ -42,7 +42,7 @@
 
   <ItemGroup>
     <PackageReference Update="ConfigureAwait.Fody" Version="3.3.2" />
-    <PackageReference Update="Fody" Version="6.8.1">
+    <PackageReference Update="Fody" Version="6.9.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
