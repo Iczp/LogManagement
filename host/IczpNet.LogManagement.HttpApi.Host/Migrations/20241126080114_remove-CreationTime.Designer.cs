@@ -3,6 +3,7 @@ using IczpNet.LogManagement.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -11,9 +12,11 @@ using Volo.Abp.EntityFrameworkCore;
 namespace IczpNet.LogManagement.Migrations
 {
     [DbContext(typeof(LogManagementHttpApiHostMigrationsDbContext))]
-    partial class LogManagementHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241126080114_remove-CreationTime")]
+    partial class removeCreationTime
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

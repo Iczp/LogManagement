@@ -61,6 +61,11 @@ public class LogManagementHttpApiHostModule : AbpModule
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
 
+        if (hostingEnvironment.IsDevelopment())
+        {
+            //----------alert------------
+            context.Services.AddAlwaysAllowAuthorization();
+        }
         Configure<AbpExceptionHandlingOptions>(options =>
         {
             options.SendExceptionsDetailsToClients = true;
