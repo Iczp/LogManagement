@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="9.0.0" />
     <ProjectReference Include="..\..\src\IczpNet.LogManagement.EntityFrameworkCore\IczpNet.LogManagement.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\IczpNet.LogManagement.TestBase\IczpNet.LogManagement.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="9.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="9.0.3" />
   </ItemGroup>
 
   <ItemGroup>
