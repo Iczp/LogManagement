@@ -4,7 +4,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
-		<Version>9.0.0.903</Version>
+		<Version>9.0.1.903</Version>
 		<Nullable>disable</Nullable>
 		<RootNamespace>IczpNet.LogManagement</RootNamespace>
 		<RepositoryUrl>https://github.com/Iczp/LogManagement.git</RepositoryUrl>
